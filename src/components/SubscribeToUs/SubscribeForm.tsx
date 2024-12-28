@@ -9,7 +9,7 @@ const SubscribeForm = () => {
     return (
         <Stack gap={2}>
             <Typography variant="body1" textTransform="capitalize" gutterBottom>
-                "Subscribe to our newsletter for web design and development tips, industry insights, and updates on our services." </Typography>
+            &quot;Subscribe to our newsletter for web design and development tips, industry insights, and updates on our services.&quot; </Typography>
             <TextField placeholder='Enter Your Email' variant="standard" fullWidth />
             <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
                 <GlowingButton

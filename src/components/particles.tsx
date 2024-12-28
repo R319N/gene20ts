@@ -54,9 +54,9 @@ const ParticlesComponent: React.FC<ParticlesComponentProps> = ({ id }) => {
         },
         move: {
           enable: true,
-          direction: "none",
+          direction: "none" as const,
           outModes: {
-            default: "out",
+            default: "out" as const,
           },
           random: true,
           speed: 0.5,
@@ -103,7 +103,6 @@ const ParticlesComponent: React.FC<ParticlesComponentProps> = ({ id }) => {
     >
       <Particles
         id={id}
-        init={particlesLoaded}
         options={options}
         style={{
           position: "relative",
