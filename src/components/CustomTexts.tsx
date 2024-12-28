@@ -19,7 +19,7 @@ export const TypingText: React.FC<TypingTextProps> = ({ title, textStyles }) => 
   </motion.p>
 );
 
-interface TitleTextProps {
+interface TitleTextProps { 
   title: string; // The title text to display
   textStyles?: string; // Optional additional CSS styles for the title
 }
