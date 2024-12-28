@@ -228,3 +228,10 @@
     transform: rotate(0deg);
   }
 }
+
+#particles canvas {
+  z-index: -1;
+  height: 10vh;
+  width: 100%;
+  position: absolute;
+}

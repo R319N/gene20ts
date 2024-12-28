@@ -1,95 +1,77 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client"
+import RootLayout from "./layout";
+import Box from "@mui/material/Box";
+import Paper from "@mui/material/Paper";
+import Appbar from '@/components/navigation/Appbar'
+import Presentation from "@/components/Presentation/Presentation";
+import OurServices from "@/sections/ourServices";
+import PrizingModel from "@/sections/prizingModel";
+import OurWork from "@/sections/ourWork";
+import Testimonials from "@/sections/testimonials";
+import ContactUs from "@/sections/contact_us";
+import TechStack from "@/sections/techStack";
+import ParticlesComponent from "@/components/particles";
+import Footer from "@/sections/Footer";
+import SubscribeToUs from "@/sections/SubscribeToUs";
 
+// export const metadata = {
+//   title: "Gene 20 - Home",
+// };
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+    <RootLayout>
+      <Paper
+        sx={{
+          minHeight: "100vh",
+          height: "100%",
+          width: "100%",
+          overflow: "hidden",
+          borderRadius: "0",
+          margin: 0,
+        }}
+      >
+        <Appbar />
+        <Presentation />
+        <Box sx={{ position: "relative", overflow: "hidden" }}>
+          <ParticlesComponent />
+        </Box>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
+        <Box
+          sx={{
+            px: { xs: "0", lg: "16%" },
+            m: 0,
+            width: "100%",
+            my: "2rem",
+          }}
         >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
+          <Box sx={{ position: "relative" }}>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
+            <div className="gradient-03" />
+            <OurServices />
+            <PrizingModel />
+          </Box>
+          <Box sx={{ position: "relative" }}>
+            <OurWork />
+            <Testimonials />
+            <div className="gradient-01" />
+          </Box>
+          <Box sx={{ position: "relative" }}>
+            <ContactUs />
+            <TechStack />
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
+            <div className="gradient-04" />
+          </Box>
+        </Box>
+        <Box sx={{
+          position: "relative", background: "#1E212Bcc",
+          backdropFilter: "blur(10px)",
+        }}>
+          <div className="feedback-gradient" />
+          <SubscribeToUs />
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+          <Footer />
+        </Box>
+      </Paper>
+    </RootLayout>
   );
 }
