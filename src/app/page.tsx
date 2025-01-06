@@ -2,6 +2,7 @@
 import RootLayout from "./layout";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
+
 import Appbar from '@/components/navigation/Appbar'
 import Presentation from "@/components/Presentation/Presentation";
 import OurServices from "@/sections/ourServices";
@@ -13,14 +14,14 @@ import TechStack from "@/sections/techStack";
 import ParticlesComponent from "@/components/particles";
 import Footer from "@/sections/Footer";
 import SubscribeToUs from "@/sections/SubscribeToUs";
-
-// export const metadata = {
-//   title: "Gene 20 - Home",
-// };
+import Typography from '@mui/material/Typography';
+import ServerLayout from "./serverLayout";
 export default function Home() {
   return (
-    <RootLayout>
-      <Paper
+    <ServerLayout>
+      <RootLayout>
+        {/* <Typography variant="h1">hello world</Typography> */}
+        <Paper
         sx={{
           minHeight: "100vh",
           height: "100%",
@@ -32,9 +33,9 @@ export default function Home() {
       >
         <Appbar />
         <Presentation />
-        <Box sx={{ position: "relative", overflow: "hidden" }}>
+        {/* <Box sx={{ position: "relative", overflow: "hidden" }}>
           <ParticlesComponent />
-        </Box>
+        </Box> */}
 
         <Box
           sx={{
@@ -72,6 +73,7 @@ export default function Home() {
           <Footer />
         </Box>
       </Paper>
-    </RootLayout>
+      </RootLayout>
+    </ServerLayout>
   );
 }

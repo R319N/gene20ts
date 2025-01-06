@@ -8,13 +8,12 @@ import CAQButton from "../caqButton";
 import { fadeIn } from "@/utils/motion";
 import { motion } from "framer-motion";
 import { staggerContainer } from "@/utils/motion";
-// import { Poppins } from "next/font/google";
-
-// const poppins = Poppins({
-//   subsets: ['latin'],
-//   weight: '900', // Set the font weight to the boldest available
-// });
-
+import { Poppins } from "next/font/google";
+import Box from '@mui/material/Box';
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: '900', // Set the font weight to the boldest available
+});
 const Heading = () => {
   return (
     <motion.div
@@ -25,17 +24,19 @@ const Heading = () => {
       style={{ margin: "auto", flexDirection: "column" }}
     >
       <Stack
-        gap={8}
+        gap={{ xs: 4, sm: 4 }}
         sx={{
           display: "flex",
-          justifyContent: "center",
+          justifyContent: "space-between",
+          // height:"100vh",
           alignItems: "center",
+          // px: { xs: "1rem", md: "5rem", xl: "20rem" },
+
         }}
       >
-        {/* Main Heading */}
         <Stack
           sx={{
-            textAlign: "center",
+            textAlign: { xs: "left", md: "center" },
             justifyContent: "center",
             alignItems: "center",
           }}
@@ -46,12 +47,18 @@ const Heading = () => {
               variant="h1"
               textTransform="uppercase"
               sx={{
-                WebkitTextStroke: "1px #DEC5E322", 
+                WebkitTextStroke: "1px #DEC5E322",
                 fontWeight: (theme) => theme.typography.fontWeightBold,
-                fontSize: { xs: pxToRem(36), md: pxToRem(64), xl: pxToRem(72) },
-                lineHeight: "1",
+                fontSize: {
+                  xs: pxToRem(28),
+                  sm: pxToRem(64), 
+                  md: pxToRem(68), 
+                  lg: pxToRem(82),
+                  xl: pxToRem(86)
+                },
+                lineHeight: "0.8",
                 color: "#449DD1",
-                // fontFamily: poppins.style.fontFamily,
+                whiteSpace: "nowrap",
               }}
             >
               Crafting Exceptional
@@ -64,15 +71,15 @@ const Heading = () => {
               whiteSpace="nowrap"
               sx={{
                 color: "#e3e3ff22", // Transparent center
-                WebkitTextStroke: "1px #DEC5E377",
+                WebkitTextStroke: `1px #DEC5E377`,
                 fontWeight: (theme) => theme.typography.fontWeightBold,
                 whiteSpace: "nowrap",
-                // fontFamily: poppins.style.fontFamily,
                 fontSize: {
-                  xs: pxToRem(32),
-                  md: pxToRem(64),
-                  lg: pxToRem(72),
-                  xlg: pxToRem(72),
+                  xs: pxToRem(28),
+                  sm: pxToRem(64), 
+                  md: pxToRem(68), 
+                  lg: pxToRem(76),
+                  xl: pxToRem(86)
                 },
               }}
             >
@@ -80,41 +87,31 @@ const Heading = () => {
             </Typography>
           </motion.div>
         </Stack>
+        <Stack sx={{ px: { xs: "1rem", md: "5rem", xl: "10rem"} }}>
+          <motion.div variants={fadeIn("up", "spring")}>
 
-        {/* Description */}
-        <motion.div variants={fadeIn("up", "spring")}>
-          <Typography
-          variant="body1"
-            sx={{
-              // ...styles.fontSize,
-              textAlign: "center",
-              fontWeight: (theme) => theme.typography.fontWeightRegular,
-              overflow: "hidden",
-              width: { xs: "100%", lg: "100%" },
-              textTransform: "capitalize",
-              px: { xs: "1rem", md: "5rem", xl: "20rem" },
-              fontSize: { xs: pxToRem(14), md: "20px", lg: "18px" },
-            }}
-          >
-            Elevate your brand with our comprehensive tech services. From
-            innovative web and graphic design to cutting-edge software
-            development, we guide you through every step of the product
-            development lifecycle. Partner with a dedicated team committed to
-            helping your product thrive in the market.
-          </Typography>
-        </motion.div>
+            <Typography
+              variant="body2"
+              sx={{
+                textAlign: { xs: "center", md: "center" },
+                fontWeight: (theme) => theme.typography.fontWeightRegular,
+                overflow: "hidden",
+                width: { xs: "100%", lg: "100%" },
+                textTransform: "capitalize",
+                fontSize: { xs: pxToRem(12), sm: pxToRem(12), md: pxToRem(20), lg: pxToRem(24) },
+              }}
+            >
+              Elevate your brand with our comprehensive tech services. From
+              innovative web and graphic design to cutting-edge software
+              development, we guide you through every step of the product
+              development lifecycle. Partner with a dedicated team committed to
+              helping your product thrive in the market.
+            </Typography>
 
-        {/* <Stack
-          direction="row"
-          gap={2}
-          sx={{
-            ...styles.center_flex,
-            justifyContent: { xs: "center", lg: "left" },
-          }}
-        >
-        
-        </Stack> */}
-        <CAQButton />
+          </motion.div>
+        </Stack>
+        <Box sx={{ mt: { xs: "6rem", sm: "8rem" } }}><CAQButton />
+        </Box>
       </Stack>
     </motion.div>
   );

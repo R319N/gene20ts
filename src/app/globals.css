@@ -1,26 +1,34 @@
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-html,
 body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  font-family: 'Roboto', sans-serif;
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+  background-color: aqua;
 }
 
 a {
-  color: inherit;
   text-decoration: none;
+}
+/* Target the autofill background */
+input:-webkit-autofill {
+  appearance: none;
+  background-color: transparent !important;
+  box-shadow: 0 0 0px 1000px transparent inset !important;
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset !important;
+  color: inherit !important;
+}
+/* global.css */
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  background-color: transparent !important;
+  color: inherit !important;
+  box-shadow: 0 0 0px 1000px transparent inset !important;
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset !important;
+}
+
+/* For general inputs */
+input,
+textarea,
+select {
+  background-color: transparent;
+  color: inherit;
 }
 
 @font-face {
@@ -33,6 +41,7 @@ a {
 .blanka-font {
   font-family: 'Blanka', sans-serif;
 }
+
 
 @media (prefers-color-scheme: dark) {
   html {
@@ -95,36 +104,7 @@ a {
   filter: blur(200px);
   transform: rotate(-53.13deg);
 }
-
-.feedback-gradient {
-  position: absolute;
-  width: 200px;
-  height: 316px;
-  left: 0px;
-  top: 0px;
-  background: #8d39a3;
-  filter: blur(175px);
-}
-
-.footer-gradient {
-  position: absolute;
-  width: 500px;
-  height: 100px;
-  left: 37%;
-  bottom: 0;
-
-  background: #65c4fa;
-  filter: blur(150px);
-}
-
 .outlined-text {
   color: white;
   filter: drop-shadow(2px 2px 0 black) drop-shadow(-2px -2px 0 black);
-}
-
-#particles canvas {
-  z-index: -1;
-  height: 10vh;
-  width: 100%;
-  position: absolute;
 }

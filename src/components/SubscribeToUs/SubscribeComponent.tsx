@@ -7,14 +7,14 @@ import { styles } from '@/styles/styles';
 import Grid from '@mui/material/Grid2';
 import Typography from '@mui/material/Typography';
 import SubscribeForm from './SubscribeForm';
-import { Poppins } from 'next/font/google';
+// import { Poppins } from 'next/font/google';
 import pxToRem from '@/utils/darkTheme/functions/pxToRem';
 
 
-const poppins = Poppins({
-    subsets: ['latin'],
-    weight: '900', // Set the font weight to the boldest available
-});
+// const poppins = Poppins({
+//     subsets: ['latin'],
+//     weight: '900', // Set the font weight to the boldest available
+// });
 
 
 const SubscribeComponent = () => {
@@ -50,7 +50,7 @@ const SubscribeComponent = () => {
                                 WebkitTextFillColor: "transparent",
                                 WebkitTextStroke: "1px #DEC5E377",
                                 fontWeight: (theme) => theme.typography.fontWeightBold,
-                                fontFamily: poppins.style.fontFamily,
+                                // fontFamily: poppins.style.fontFamily,
                                 fontSize: {
                                     xs: pxToRem(48),
                                     md: pxToRem(64),

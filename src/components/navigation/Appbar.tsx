@@ -12,7 +12,6 @@ import Link from "next/link";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
-import Hidden from "@mui/material/Hidden";
 import IconButton from "@mui/material/IconButton";
 import Stack from "@mui/material/Stack";
 import Toolbar from "@mui/material/Toolbar";
@@ -26,9 +25,8 @@ import { styles } from "@/styles/styles";
 
 // *** component imports ***
 import Gene20Logo from "../gene20Logo";
-// import NavTabs from "./NavTabs";
 import GlowingButtonOutlined from "../glowingButtonOutlined";
-import useScrollTrigger from '@mui/material/useScrollTrigger';
+import useScrollTrigger from "@mui/material/useScrollTrigger";
 import NavTabs from "./NavTabs";
 import NavigationMenu from "./NavigationMenu";
 
@@ -53,7 +51,6 @@ function ElevationScroll(props: Props) {
 
   return React.cloneElement(children!, {
     elevation: trigger ? 1 : 0,
-
     ...props,
   });
 }
@@ -71,10 +68,9 @@ const Appbar: React.FC<DashBoardNavigationProps> = ({
   const open = Boolean(anchorEl);
   const container = window !== undefined ? () => window().document.body : undefined;
 
-  // Track scroll state to change AppBar background color
   const trigger = useScrollTrigger({
     disableHysteresis: true,
-    threshold: 100, // Change this to adjust when the color changes
+    threshold: 100,
   });
 
   return (
@@ -93,10 +89,11 @@ const Appbar: React.FC<DashBoardNavigationProps> = ({
               position="static"
               sx={{
                 ...styles.scrolledAppBar,
-                backgroundColor: trigger ? "#DEC5E308" : "transparent", // Change color on scroll
+                backgroundColor: trigger ? "#DEC5E308" : "transparent",
                 backdropFilter: "blur(10px)",
-                boxShadow: "none"
-              }}>
+                boxShadow: "none",
+              }}
+            >
               <Toolbar
                 sx={{
                   ...styles.between_flex,
@@ -124,7 +121,7 @@ const Appbar: React.FC<DashBoardNavigationProps> = ({
                       sx={{
                         ...styles.iconHover,
                         borderRadius: "10px",
-                        display: { xs: "flex", lg: "none" },
+                        display: { xs: "flex", sm: "none" },
                       }}
                     >
                       {!mobileOpen ? <MenuIcon /> : <Close />}
@@ -133,12 +130,19 @@ const Appbar: React.FC<DashBoardNavigationProps> = ({
                       <Gene20Logo />
                     </Link>
                   </Box>
-                  <Hidden mdDown implementation="css">
-                    <Box display="flex" alignItems="center">
-                      <NavTabs />
-                    </Box>
-                  </Hidden>
-                  <Hidden smDown implementation="css">
+                  <Box
+                    sx={{
+                      display: { xs: "none", md: "flex" },
+                      alignItems: "center",
+                    }}
+                  >
+                    <NavTabs />
+                  </Box>
+                  <Box
+                    sx={{
+                      display: { xs: "none", sm: "flex" },
+                    }}
+                  >
                     <a href="/#contact">
                       <GlowingButtonOutlined
                         variant="outlined"
@@ -148,22 +152,25 @@ const Appbar: React.FC<DashBoardNavigationProps> = ({
                         contact us
                       </GlowingButtonOutlined>
                     </a>
-                  </Hidden>
-                  <Hidden smUp implementation="css">
-                    <Box display="flex" alignItems="center">
-                      <Stack gap={0.5} direction="row" alignItems="center">
-                        <a href="/#contact">
-                          <GlowingButtonOutlined
-                            variant="outlined"
-                            type="button"
-                            size="small"
-                          >
-                            contact us
-                          </GlowingButtonOutlined>
-                        </a>
-                      </Stack>
-                    </Box>
-                  </Hidden>
+                  </Box>
+                  <Box
+                    sx={{
+                      display: { xs: "flex", sm: "none" },
+                      alignItems: "center",
+                    }}
+                  >
+                    <Stack gap={0.5} direction="row" alignItems="center">
+                      <a href="/#contact">
+                        <GlowingButtonOutlined
+                          variant="outlined"
+                          type="button"
+                          size="small"
+                        >
+                          contact us
+                        </GlowingButtonOutlined>
+                      </a>
+                    </Stack>
+                  </Box>
                 </Box>
               </Toolbar>
             </AppBar>
@@ -176,11 +183,10 @@ const Appbar: React.FC<DashBoardNavigationProps> = ({
           open={mobileOpen}
           onClose={handleDrawerToggle}
           ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
+            keepMounted: true,
           }}
           sx={{
             display: { xs: "flex", sm: "none" },
-
             "& .MuiDrawer-paper": {
               boxSizing: "border-box",
               width: 260,
@@ -197,8 +203,7 @@ const Appbar: React.FC<DashBoardNavigationProps> = ({
         </Drawer>
       </Box>
     </>
+  );
+};
 
-  )
-}
-
-export default Appbar
+export default Appbar;
