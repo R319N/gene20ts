@@ -1,14 +1,12 @@
 body {
-    font-family: Arial, sans-serif;
-    /* background-color: black; */
-    /* Background color for the page */
+    font-family: 'Roboto', sans-serif;
+    background-color: black;
     color: white;
-    /* Text color */
-    /* display: flex;
+    display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0; */
+    margin: 0;
 }
 
 .divider-container {

@@ -4,18 +4,19 @@ import { motion } from "framer-motion";
 import Stack from "@mui/material/Stack";
 import Box from '@mui/material/Box';
 import Typography from "@mui/material/Typography";
+import { styles } from '@/styles/styles';
 
 const SlidingTexts = () => {
     return (
         <Box sx={{ height: "100%", position: "absolute", py: "5rem", }}>
-            <Stack
-                gap={1}
+            <Box
+                gap={2}
                 sx={{
 
                     display: "block",
                     alignItems: "center",
                     whiteSpace: "nowrap",
-                    // bottom: "30px",
+                    justifyContent: "space-between",
                     opacity: "0.1",
                     width: "100%",
                     zIndex: 1,
@@ -30,11 +31,7 @@ const SlidingTexts = () => {
                         <Typography
                             variant="h1"
                             color="secondary"
-                            sx={{
-                                fontSize: { xs: '8vh', md: '15vh', lg: '5rem' },
-                                whiteSpace: "nowrap",
-                                textTransform: "capitalize",
-                            }}
+                            sx={styles.slidingText}
                         >
                             website development
                         </Typography>
@@ -49,13 +46,9 @@ const SlidingTexts = () => {
                         <Typography
                             variant="h1"
                             color="textPrimary"
-                            sx={{
-                                fontSize: { xs: '8vh', md: '15vh', lg: '5rem' },
-                                whiteSpace: "nowrap",
-                                textTransform: "capitalize"
-                            }}
+                            sx={styles.slidingText}
                         >
-                            ui/ux development
+                            UI/UX development
                         </Typography>
                     </Box>
                 </motion.div>
@@ -68,11 +61,7 @@ const SlidingTexts = () => {
                         <Typography
                             variant="h1"
                             color="primary"
-                            sx={{
-                                fontSize: { xs: '8vh', md: '15vh', lg: '5rem' },
-                                whiteSpace: "nowrap",
-                                textTransform: "capitalize",
-                            }}
+                            sx={styles.slidingText}
                         >
                             video editing.
                         </Typography>
@@ -87,10 +76,7 @@ const SlidingTexts = () => {
                         <Typography
                             variant="h1"
                             color="secondary"
-                            sx={{
-                                fontSize: { xs: '8vh', md: '15vh', lg: '5rem' },
-                                whiteSpace: "nowrap",
-                            }}
+                            sx={styles.slidingText}
                         >
                             software development.
                         </Typography>
@@ -105,11 +91,7 @@ const SlidingTexts = () => {
                         <Typography
                             variant="h1"
                             color="primary"
-                            sx={{
-                                fontSize: { xs: '8vh', md: '15vh', lg: '5rem' },
-                                whiteSpace: "nowrap",
-                                textTransform: "capitalize",
-                            }}
+                            sx={styles.slidingText}
                         >
                             web design
                         </Typography>
@@ -124,10 +106,7 @@ const SlidingTexts = () => {
                         <Typography
                             variant="h1"
                             color="textPrimary"
-                            sx={{
-                                fontSize: { xs: '8vh', md: '15vh', lg: '5rem' },
-                                whiteSpace: "nowrap",
-                            }}
+                            sx={styles.slidingText}
                         >
                             mobile development.
                         </Typography>
@@ -142,17 +121,13 @@ const SlidingTexts = () => {
                         <Typography
                             variant="h1"
                             color="secondary"
-                            sx={{
-                                fontSize: { xs: '8vh', md: '15vh', lg: '5rem' },
-                                whiteSpace: "nowrap",
-                                textTransform: "capitalize",
-                            }}
+                            sx={styles.slidingText}
                         >
                             graphic design
                         </Typography>
                     </Box>
                 </motion.div>
-            </Stack>
+            </Box>
         </Box>
     )
 }

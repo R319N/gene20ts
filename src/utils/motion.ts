@@ -165,7 +165,7 @@ export const sliderVariantLeft: Variants = {
   animate: {
     x: "-100%",
     transition: {
-      duration: 12,
+      duration: 20,
       ease: "linear",
       repeatType: "mirror",
       repeat: Infinity,
@@ -176,7 +176,7 @@ export const sliderVariantLeft: Variants = {
 export const sliderVariantLeft2: Variants = {
   initial: { x: "100%" },
   animate: {
-    x: "-120%",
+    x: "-100%",
     transition: {
       duration: 30,
       repeatType: "mirror",
@@ -191,7 +191,7 @@ export const sliderVariantRight: Variants = {
   animate: {
     x: "100%",
     transition: {
-      duration: 15,
+      duration: 20,
       repeatType: "mirror",
       ease: "linear",
       repeat: Infinity,
@@ -202,7 +202,7 @@ export const sliderVariantRight: Variants = {
 export const sliderVariantRight2: Variants = {
   initial: { x: "-100%" },
   animate: {
-    x: "150%",
+    x: "100%",
     transition: {
       duration: 40,
       repeatType: "mirror",

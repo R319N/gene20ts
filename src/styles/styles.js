@@ -1,3 +1,5 @@
+import pxToRem from "@/utils/darkTheme/functions/pxToRem";
+
 export const styles = {
   transparentAppBar: {
     backgroundColor: "transparent",
@@ -107,6 +109,16 @@ export const styles = {
     "&:hover": {
       transform: "scale(2)",
     },
+  },
+  slidingText:{
+    fontSize: {
+      xs: pxToRem(48),
+      sm: pxToRem(64), 
+      md: pxToRem(68), 
+      lg: pxToRem(76),
+    },
+    whiteSpace: "nowrap",
+    textTransform: "capitalize",
   },
   iconHover: {
     "&:hover": {
