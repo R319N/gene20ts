@@ -33,9 +33,9 @@ export default function Home() {
       >
         <Appbar />
         <Presentation />
-        <Box sx={{ position: "relative", overflow: "hidden" }}>
+        {/* <Box sx={{ position: "relative", overflow: "hidden" }}>
           <ParticlesComponent />
-        </Box>
+        </Box> */}
 
         <Box
           sx={{
