@@ -45,12 +45,12 @@ const Heading = () => {
         >
           <motion.div variants={fadeIn("left", "tween", 0.2, 1)}>
             <Typography
-              variant="h1"
+              variant="h6"
               textTransform="uppercase"
               sx={{
                 WebkitTextStroke: "1px #DEC5E322",
                 fontWeight: (theme) => theme.typography.fontWeightBold,
-                fontSize: { xs: pxToRem(36), md: pxToRem(64), xl: pxToRem(72) },
+                fontSize: { xs: pxToRem(30), md: pxToRem(64), xl: pxToRem(72) },
                 lineHeight: "1",
                 color: "#449DD1",
                 whiteSpace: "nowrap",
@@ -70,7 +70,7 @@ const Heading = () => {
                 fontWeight: (theme) => theme.typography.fontWeightBold,
                 whiteSpace: "nowrap",
                 fontSize: {
-                  xs: pxToRem(32),
+                  xs: pxToRem(28),
                   md: pxToRem(64),
                   lg: pxToRem(72),
                   xlg: pxToRem(72),
