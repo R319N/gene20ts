@@ -4,7 +4,7 @@ import Button from '@mui/material/Button'
 
 const GlowingButton = styled(Button)`
   color: ${({ theme }) => theme.palette.text.primary};
-  background-color: ${({ theme }) => theme.palette.primary.main};
+  background-color: ${({ theme }) => theme.palette.secondary.main};
   min-height: ${({ theme }) => theme.spacing(5)};
   padding: ${({ theme }) => `${theme.spacing(1.25)} ${theme.spacing(2)}`};
   font-size: '10px';
@@ -12,8 +12,8 @@ const GlowingButton = styled(Button)`
   transition: all 0.3s ease;
 
   &:hover {
-    background-color: ${({ theme }) => theme.palette.primary.dark};
-    box-shadow: 0 0 10px ${({ theme }) => theme.palette.primary.main};
+    background-color: ${({ theme }) => theme.palette.secondary.dark};
+    box-shadow: 0 0 10px ${({ theme }) => theme.palette.secondary.main};
     color: ${({ theme }) => theme.palette.text.primary};
   }
 

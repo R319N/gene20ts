@@ -1,68 +1,67 @@
-'use client'
-import Box from '@mui/material/Box';
-import React from 'react';
+import { Box, styled } from '@mui/material';
+import React from 'react'
 import ParticlesComponent from '../particles';
-import { styled } from '@mui/material';
-import Heading from './heading';
-import { styles } from '@/styles/styles';
-import SlidingTexts from './SlidingTexts';
-
-const BackgroundImage = styled(Box)({
-  position: "absolute",
-  top: 0,
-  left: 0,
-  width: "100%",
-  height: "100%",
-  backgroundImage: `url('/bg.jpg')`,
-  backgroundSize: "cover",
-  backgroundPosition: "center",
-  opacity: 0.2,
-  zIndex: 0,
-});
-
-const Overlay = styled(Box)({
-  position: "absolute",
-  top: 0,
-  left: 0,
-  width: "100%",
-  height: "100%",
-  backgroundImage: `linear-gradient(45deg, #449DD150 0%, #9A48D050 100%)`,
-  zIndex: 2,
-});
-
-const Content = styled(Box)({
-  ...styles.center_flex,
-  position: "relative",
-  zIndex: 3,
-  color: "white",
-  width: "100%",
-  top: "50%",
-  px: "2rem",
-  transform: "translateY(-50%)",
-});
+import AnimatedText from './animatedText';
+import Hero from '@/components/heroComponents/Hero'
 
 const Presentation = () => {
+  const Overlay = styled(Box)({
+    position: "absolute",
+    top: 0,
+    left: 0,
+    width: "100%",
+    height: "100%",
+    backgroundImage: `linear-gradient( to bottom left,  #0c0910cc,rgba(92, 92, 92, 0.93))`,
+    zIndex: 2,
+  });
+  const BackgroundImage = styled(Box)({
+    position: "absolute",
+    top: 0,
+    left: 0,
+    width: "100%",
+    height: "100vh",
+    backgroundImage: `url('/creator1.png')`,
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+    backgroundRepeat: "no-repeat",
+    opacity: 0.2,
+    zIndex: 0,
+  });
+
+
   return (
-    <Box sx={{ position: "relative", height: "100vh", overflow: "hidden" }}>
-      <BackgroundImage />
-      <Overlay />
-      <SlidingTexts />
-      <Content>
-        <Heading />
-      </Content>
+    <Box sx={{ height: "100vh", position: "relative" }}>
       <Box
-        sx={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-          zIndex: 1, // Below the content but above the background
-        }}
+      // sx={{
+      //   padding: 0,
+      //   backgroundImage: {
+      //     xs: `url('/creator1.png')`,
+      //     sm: `url('/codeback.jpg')`,
+      //   },
+      //   height: "100%",
+      //   backgroundSize: "cover",
+      //   backgroundPosition: "center",
+      //   backgroundRepeat: "no-repeat",
+      //   fontVariant: "small-caps",
+      // }}
       >
+
+        <Overlay />
+        <BackgroundImage />
+        <Box sx={{ position: "relative", overflow: "hidden" }}>
+          <ParticlesComponent />
+        </Box>   
+        <Hero/>
+        {/* <ParticlesBackground /> */}
+        <Box sx={{ height: "100%" }}>
+          <AnimatedText/>
+          {/* <PortfolioPresentation /> */}
+        </Box>
+        {/* </Box> */}
       </Box>
     </Box>
   );
-};
 
-export default Presentation;
+}
+
+export default Presentation

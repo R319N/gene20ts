@@ -6,7 +6,7 @@ import OurServicesComponent from "@/components/our-services/OurServicesComponent
 import Container from '@mui/material/Container';
 const OurServices = () => {
   return (
-    <section style={{ position: "relative", zIndex: 10 }} id="services">
+    <section id="services">
       <motion.div
         variants={staggerContainer}
         initial="hidden"

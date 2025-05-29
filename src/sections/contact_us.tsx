@@ -8,9 +8,6 @@ import ContactUsComponent from '@/components/contact/ContactUsComponent'
 const ContactUs = () => {
   return (
     <section
-      style={{
-        position: 'relative',
-      }}
       id="contact"
     >
       <motion.div

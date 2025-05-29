@@ -12,38 +12,38 @@ export interface NavigationItem {
 const navigation: NavigationItem[] = [
   {
     name: "home",
-    url: "/",
+    url: "/#home",
     href: "/",
     isTab: true,
     isFooter: true,
     isNavigation: true,
   },
   {
-    name: "our services",
+    name: "services",
     url: "/#services",
     href: "/",
     isTab: true,
     isNavigation: true,
   },
   {
-    name: "prizing",
-    url: "/#prizing",
+    name: "portfolio",
+    url: "/#portfolio",
     href: "/",
     isTab: true,
     isNavigation: true,
   },
 
   {
-    name: "our work",
-    url: "/#gallery",
+    name: "about",
+    url: "/#about",
     href: "/",
     isTab: true,
     isNavigation: true,
   },
 
   {
-    name: "about us",
-    url: "/about",
+    name: "contact",
+    url: "/#contact",
     href: "/",
     isTab: true,
     isNavigation: true,

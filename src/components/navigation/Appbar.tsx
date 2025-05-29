@@ -6,7 +6,6 @@
 "use client";
 // *** react/next imports ***
 import React, { useState } from "react";
-import Link from "next/link";
 
 // *** MUI5 Component imports ***
 import AppBar from "@mui/material/AppBar";
@@ -29,6 +28,9 @@ import GlowingButtonOutlined from "../glowingButtonOutlined";
 import useScrollTrigger from "@mui/material/useScrollTrigger";
 import NavTabs from "./NavTabs";
 import NavigationMenu from "./NavigationMenu";
+import Logo from "../logo";
+import ContactBar from "../contactBar";
+import { Link } from "@mui/material";
 
 interface Props {
   window?: () => Window;
@@ -121,39 +123,28 @@ const Appbar: React.FC<DashBoardNavigationProps> = ({
                       sx={{
                         ...styles.iconHover,
                         borderRadius: "10px",
-                        display: { xs: "flex", sm: "none" },
+                        border: "1px solid #D0A5C055",
+                        display: { xs: "flex", xl: "none" },
                       }}
                     >
                       {!mobileOpen ? <MenuIcon /> : <Close />}
                     </IconButton>
-                    <Link href="/">
-                      <Gene20Logo />
+                    <Link href="/" sx={{ display: { xs: "none", xl: "flex" }, }}>
+                      <Logo />
                     </Link>
                   </Box>
                   <Box
                     sx={{
-                      display: { xs: "none", md: "flex" },
+                      display: { xs: "none", xl: "flex" },
                       alignItems: "center",
                     }}
                   >
                     <NavTabs />
                   </Box>
-                  <Box
-                    sx={{
-                      display: { xs: "none", sm: "flex" },
-                    }}
-                  >
-                    <a href="/#contact">
-                      <GlowingButtonOutlined
-                        variant="outlined"
-                        type="button"
-                        size="small"
-                      >
-                        contact us
-                      </GlowingButtonOutlined>
-                    </a>
+                  <Box>
+                    <ContactBar />
                   </Box>
-                  <Box
+                  {/* <Box
                     sx={{
                       display: { xs: "flex", sm: "none" },
                       alignItems: "center",
@@ -170,7 +161,7 @@ const Appbar: React.FC<DashBoardNavigationProps> = ({
                         </GlowingButtonOutlined>
                       </a>
                     </Stack>
-                  </Box>
+                  </Box> */}
                 </Box>
               </Toolbar>
             </AppBar>
@@ -186,7 +177,7 @@ const Appbar: React.FC<DashBoardNavigationProps> = ({
             keepMounted: true,
           }}
           sx={{
-            display: { xs: "flex", sm: "none" },
+            display: { xs: "flex", xl: "none" },
             "& .MuiDrawer-paper": {
               boxSizing: "border-box",
               width: 260,

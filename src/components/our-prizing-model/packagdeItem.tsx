@@ -166,10 +166,11 @@ const PackadgeItem: React.FC<PackadgeItemProps> = ({ offer, index }) => {
               <InfoIcon color="primary" />
               <Typography
                 variant="body2"
+                color="textSecondary"
                 sx={{
                   textAlign: "left",
                   textTransform: "capitalize",
-                  color: "#5C6584",
+                  // color: "#5C6584",
                 }}
               >
                 {recommendation}

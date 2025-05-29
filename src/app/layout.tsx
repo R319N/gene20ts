@@ -5,7 +5,7 @@ import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 import { ThemeProvider } from "@mui/material/styles";
 import { Roboto } from "next/font/google";
 import React, { useEffect } from "react";
-import gene20DarkTheme from '@/utils/darkTheme/gene20DarkTheme'
+import wilfredReignTheme from '@/utils/darkTheme/gene20DarkTheme'
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -32,7 +32,7 @@ export default function RootLayout(props: { children: React.ReactNode }) {
       </head>
       <body>
         <AppRouterCacheProvider options={{ key: "css" }} {...props}>
-          <ThemeProvider theme={gene20DarkTheme}>
+          <ThemeProvider theme={wilfredReignTheme}>
             <CssBaseline />
             {children}
           </ThemeProvider>

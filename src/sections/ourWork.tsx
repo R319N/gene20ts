@@ -8,14 +8,7 @@ import OurWorkComponent from "@/components/our-work/OurWorkComponent";
 const OurWork = () => {
   return (
     <section
-      style={{
-        position: "relative",
-        zIndex: 10,
-        ...styles.center_flex,
-        width: "100%",
-        flexDirection: "column",
-      }}
-      id="gallery"
+      id="portfolio"
     >
       <motion.div
         variants={staggerContainer}

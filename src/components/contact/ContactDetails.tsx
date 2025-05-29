@@ -21,12 +21,11 @@ export default function ContactDetails() {
     return (
         <Box
             sx={{
-                py: "2rem",
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "space-between",
                 alignItems: "center",
-                height: "100%",
+                // height: "100%",
             }}
             gap={6}
         >

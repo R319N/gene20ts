@@ -2,8 +2,8 @@ import colors from "../../base/colors";
 import typography from "../../base/typography";
 import pxToRem from "../../functions/pxToRem";
 
-const { dark, primary } = colors;
-const { size, fontWeightBold } = typography;
+const { dark, text } = colors;
+const { size, fontWeightRegular, fontWeightLight } = typography;
 
 const formControlLabel = {
   styleOverrides: {
@@ -15,10 +15,10 @@ const formControlLabel = {
 
     label: {
       display: "inline-block",
-      fontSize: size.sm,
-      fontWeight: fontWeightBold,
-      color: primary.main,
-      lineHeight: 1,
+      fontSize: pxToRem(14),
+      fontWeight: fontWeightRegular,
+      color: text.secondary,
+      lineHeight: 1.5,
       transform: `translateY(${pxToRem(1)})`,
       marginLeft: pxToRem(4),
 

@@ -13,7 +13,6 @@ const stepLabel = {
       fontWeight: fontWeightRegular,
       fontSize: size.xs,
       color: '#9fc9ff',
-      textTransform: 'uppercase',
 
       '&.Mui-active': {
         fontWeight: `${fontWeightRegular} !important`,

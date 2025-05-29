@@ -6,19 +6,21 @@ import { styles } from "@/styles/styles";
 import { TitleText } from "../CustomTexts";
 import HeadingText from "../headerBanner";
 import Stack from "./Stack";
+import ParticlesComponent from "../particles";
+import { Container } from "@mui/material";
 
 const TechStackComponent = () => {
   const headerText = "technologies\nwe use"
   const header = <TitleText title={headerText} />;
   return (
-    <Box
+    <Container
       sx={{
         ...styles.center_flex,
         flexDirection: "column",
-        width: "100%",
-        mt: "2rem",
+        ...styles.container
       }}
     >
+      <ParticlesComponent />
       <Typography
         variant="body2"
         textAlign="center"
@@ -38,9 +40,8 @@ const TechStackComponent = () => {
         <span style={{ color: "#449DD1" }}>Integrate</span> -
         <span style={{ color: "#DEC5E3" }}>Elevate</span>
       </Typography>
-      <HeadingText header={header} />
       <Stack />
-    </Box>
+    </Container>
   );
 };
 

@@ -1,22 +1,24 @@
-interface Projects {
-  id: string,
-  imgUrl: string,
-  title: string,
-  description: string,
-  pageUrl: string,
-  technologies?: string
+import { Portfolio } from "../../../type";
 
-}
-const ourProjects: Projects[] = [
+// interface Projects {
+//   id: string,
+//   imgUrl: string,
+//   title: string,
+//   description: string,
+//   pageUrl: string,
+//   technologies?: string
+
+// }
+const ourProjects = [
   {
-    id: "project-1",
+    id: "city-kicks",
     imgUrl: "/city-kicks.png",
     title: "city kicks",
     description: "clothing shop offering a variety of clothing items.",
     pageUrl: "https://igugu-empire-projects.netlify.app",
   },
   {
-    id: "project-4",
+    id: "igugu-projects",
     imgUrl: "/igugu-projects.png",
     title: "igugu projects",
     description:
@@ -25,7 +27,7 @@ const ourProjects: Projects[] = [
   },
 
   {
-    id: "project-3",
+    id: "jhb-shoefreaks",
     imgUrl: "/shoe-freaks1.png",
     title: "Shoe Freaks South-Africa",
     description:
@@ -39,7 +41,7 @@ const ourProjects: Projects[] = [
     description: "portfolio website for a security services company.",
     pageUrl: "https://igugu-empire-projects.netlify.app",
   },
- 
+
   {
     id: "project-5",
     imgUrl: "/moti.png",
@@ -50,8 +52,8 @@ const ourProjects: Projects[] = [
   },
   {
     id: "project-6",
-    imgUrl: "/generation.png",
-    title: "genexx community",
+    imgUrl: "/metaversus.png",
+    title: "metaversus",
     description: "a dynamic community of versatile professionals, excelling in diverse fields and fostering collaboration for innovative solutions.",
     technologies: "next JS, mui5",
     pageUrl: ""

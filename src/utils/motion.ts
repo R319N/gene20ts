@@ -1,5 +1,6 @@
 "use client";
 
+import { Opacity } from "@tsparticles/engine";
 import { Variants } from "framer-motion";
 
 // Define the direction and animation types
@@ -39,6 +40,12 @@ export const navVariants: Variants = {
   },
 };
 
+
+export const stepVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  exit: { opacity: 0, y: -20, transition: { duration: 0.3 } },
+};
 // Slide-in animation
 export const slideIn = (
   direction: Direction = "up",
@@ -71,6 +78,11 @@ export const staggerContainer: Variants = {
       staggerChildren: 0.2,
     },
   },
+};
+
+export const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
 };
 
 // Text variant animation
@@ -172,7 +184,23 @@ export const sliderVariantLeft: Variants = {
     },
   },
 };
+export const scrollButtonVariant = {
+  opacity: 0,
+  y: 10,
+  transition: {
+    duration: 3,
+    repeat: Infinity
+  },
 
+};
+// export const scrollButtonVariant = {
+//   opacity: 0,
+//   y: 10,
+//   transition: {
+//     duration: 2,
+//     repeat: Infinity
+//   }
+// };
 export const sliderVariantLeft2: Variants = {
   initial: { x: "100%" },
   animate: {

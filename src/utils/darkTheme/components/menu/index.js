@@ -23,7 +23,7 @@ const menu = {
       fontSize: size.sm,
       color: text.primary,
       textAlign: "left",
-      backgroundColor: `${transparent.main} !important`,
+      // backgroundColor: `${transparent.main} !important`,
       backdropFilter: "blur(3px)",
     },
   },

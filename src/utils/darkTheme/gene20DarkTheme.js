@@ -23,7 +23,6 @@ import tabs from "./components/tabs";
 import tab from "./components/tabs/tab";
 import tabPanel from "./components/tabs/tabPanel";
 
-
 import pxToRem from "./functions/pxToRem";
 import linearGradient from "./functions/linearGradient";
 import rgba from "./functions/rgba";
@@ -89,6 +88,7 @@ const gene20DarkTheme = createTheme({
     MuiTabPanel: { ...tabPanel },
     MuiStepper: { ...stepper },
     MuiCard: { ...card },
+    MuiCardContent: { ...cardContent },
     MuiCardMedia: { ...cardMedia },
     MuiCardHeader: { ...cardHeader },
     MuiCardContent: { ...cardContent },

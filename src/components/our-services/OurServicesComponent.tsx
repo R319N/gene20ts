@@ -15,6 +15,7 @@ import styles from "./MyCarousel.module.css";
 import Image from "next/image";
 import ourServices from "@/utils/data/our_services-data";
 import { TitleText } from "../CustomTexts";
+import { Container } from "@mui/material";
 // import { TitleText } from "../CustomTexts";
 // import Image from "next/image";
 
@@ -74,7 +75,7 @@ const PrevArrow: React.FC<ArrowProps> = ({ onClick }) => {
 };
 const OurServicesComponent = () => {
     const [activeSlide, setActiveSlide] = useState(0);
-    const header = <TitleText title="our services" />;
+    const header = "what i do";
     const subHeader =
         "We also offer graphic design, web design, branding, content creation, social media management, SEO optimization, and digital marketing to enhance your brand's online presence.";
     const settings = {
@@ -129,122 +130,146 @@ const OurServicesComponent = () => {
 
 
     return (
-        <Box
+        <Container
+            // sx={{
+            //     width: "100%",
+            //     pt: "5rem",
+            //     px: 0
+            // }}
             sx={{
                 width: "100%",
-                pt: "5rem",
-                px: 0
+                height: "100%",
+                overflow: "hidden",
+                paddingTop: "5rem",
             }}
         >
-            <HeadingText
-                header={header}
-                subHeader={subHeader}
-            />
-            <Box
-                sx={{
-                    px: { xs: "1rem", lg: 0 },
-                    my: "2rem",
-                }}
-            >
-                <Slider {...settings}>
-                    {ourServices.map((service, index) => (
-                        <Box
-                            key={index}
-                            className={`${styles.cardWrapper} ${activeSlide === index ? styles.activeCard : ""}`}
-                        >
+            <Box width="100%">
+                <HeadingText
+                    header={header}
+                    subHeader={subHeader}
+                />
+                <Box
+                    sx={{
+                        px: { xs: "1rem", lg: 0 },
+                        my: "2rem",
+                    }}
+                >
+                    <Slider {...settings}>
+                        {ourServices.map((service, index) => (
                             <Box
-                                className={styles.card}
+                                key={index}
+                                className={`${styles.cardWrapper} ${activeSlide === index ? styles.activeCard : ""}`}
                             >
-                                <Box className={styles.cardContent}>
-                                    <Box height="25vh">
-                                        <Image
-                                            src={service.imgURL}
-                                            alt={`${service.name}`}
-                                            width={300}
-                                            height={200}
-                                            style={{
-                                                width: "100%",
-                                                height: "80%",
-                                                objectFit: "cover",
-                                                zIndex: "1",
-                                            }}
-                                        />
-                                        <Box
-                                            sx={{
-                                                position: "absolute",
-                                                bgcolor: "#00000099",
-                                                height: "80%",
-                                                width: "100%",
-                                                zIndex: "2",
-                                                top: "0",
-                                            }}
-                                        />
-                                    </Box>
-                                    <Box
-                                        sx={{
-                                            display: "flex",
-                                            margin: "auto",
-                                            justifyContent: "center",
-                                            alignItems: "center",
-                                            position: "absolute",
-                                            top: "80%",
-                                            left: "50%",
-                                            transform: "translate(-50%, -50%)",
-                                            zIndex: "3",
+                                <Box
+                                    className={styles.card}
+                                >
+                                    <Box className={styles.cardContent}>
+                                        <Box sx={{
+                                            position: "relative"
                                         }}
-                                    >
+                                            height="30vh" px={1} mt="-3rem" py={4}>
+                                            <Image
+                                                src={service.imgURL}
+                                                alt={`${service.name}`}
+                                                width={300}
+                                                height={200}
+                                                style={{
+                                                    width: "100%",
+                                                    height: "80%",
+                                                    objectFit: "cover",
+                                                    zIndex: "1",
+                                                    borderRadius: "8px"
+                                                }}
+                                            />
+                                            {/* <div style={{
+                                            position: "absolute",
+                                            width: "100%",
+                                            height: "30vh",
+                                            // padding:"1rem 1rem",
+                                            marginTop: "-3rem",
+                                            //  py:"4",
+
+                                            top: "0",
+                                        }}>
+                                            <Box
+                                                sx={{
+                                                    position: "relative",
+                                                    bgcolor: "#00000099",
+                                                    zIndex: "2",
+                                                    width: "100%",
+                                                    height: "80%",
+
+                                                }}
+                                            />
+                                        </div> */}
+
+                                        </Box>
                                         <Box
                                             sx={{
-                                                backgroundImage:
-                                                    "linear-gradient(45deg, #449DD130 0%, #9A48D030 100%)",
-                                                minWidth: "10vw",
-                                                width: "100%",
                                                 display: "flex",
-                                                flexDirection: "column",
+                                                margin: "auto",
                                                 justifyContent: "center",
                                                 alignItems: "center",
-                                                p: "1rem",
-                                                backdropFilter: "blur(10px)",
-                                                borderRadius: "10px",
-                                                border: "1px solid #dec5e315",
-                                                textRendering: "optimizeLegibility",
-                                                "-webkit-font-smoothing": "antialiased",
-                                                "-moz-osx-font-smoothing": "grayscale",
+                                                position: "absolute",
+                                                top: "70%",
+                                                left: "50%",
+                                                transform: "translate(-50%, -50%)",
+                                                zIndex: "3",
                                             }}
                                         >
-                                            <>{service.icon}</>
-                                            <Typography
-                                                variant="body1"
+                                            <Box
                                                 sx={{
-                                                    textTransform: "capitalize",
-                                                    fontWeight: "lighter",
-                                                    textAlign: "center",
-                                                    fontSmooth: "always",
+                                                    backgroundImage:
+                                                        "linear-gradient(45deg, #449DD130 0%, #9A48D030 100%)",
+                                                    minWidth: "100px",
+                                                    width: "100%",
+                                                    display: "flex",
+                                                    flexDirection: "column",
+                                                    justifyContent: "center",
+                                                    alignItems: "center",
+                                                    p: "1rem",
+                                                    backdropFilter: "blur(10px)",
+                                                    borderRadius: "10px",
+                                                    border: "1px solid #dec5e315",
+                                                    textRendering: "optimizeLegibility",
+                                                    "-webkit-font-smoothing": "antialiased",
+                                                    "-moz-osx-font-smoothing": "grayscale",
                                                 }}
                                             >
-                                                <Box
-                                                    component="span"
-                                                    sx={{ color: "#dec5e3", my: "0.5rem" }}
+                                                <>{service.icon}</>
+                                                <Typography
+                                                    variant="body2"
+                                                    sx={{
+                                                        textTransform: "capitalize",
+                                                        fontWeight: "lighter",
+                                                        textAlign: "center",
+                                                        fontSmooth: "always",
+                                                    }}
                                                 >
-                                                    {service.name.split(" ")[0]}
-                                                </Box>
-                                                <Box
-                                                    component="span"
-                                                    sx={{ color: "#449DD1", display: "block" }}
-                                                >
-                                                    {service.name.split(" ").slice(1).join(" ")}
-                                                </Box>
-                                            </Typography>
+                                                    <Box
+                                                        component="span"
+                                                        sx={{ color: "#dec5e3", my: "0.5rem" }}
+                                                    >
+                                                        {service.name.split(" ")[0]}
+                                                    </Box>
+                                                    <Box
+                                                        component="span"
+                                                        sx={{ color: "#449DD1", display: "block" }}
+                                                    >
+                                                        {service.name.split(" ").slice(1).join(" ")}
+                                                    </Box>
+                                                </Typography>
+                                            </Box>
                                         </Box>
                                     </Box>
+                                    <Box className={styles.cardBackdrop} />
                                 </Box>
-                                <Box className={styles.cardBackdrop} />
                             </Box>
-                        </Box>
-                    ))}
-                </Slider>
+                        ))}
+                    </Slider>
+                </Box>
             </Box>
-        </Box>
+        </Container>
     )
 }
 

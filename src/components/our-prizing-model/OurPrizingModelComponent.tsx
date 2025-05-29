@@ -88,7 +88,7 @@ const OurPrizingModelComponent: React.FC = () => {
                     <Typography variant="body1" textTransform="capitalize">
                         Get the right suitable quote for your business.
                     </Typography>
-                    <GlowingButtonOutlined>Discuss your website!</GlowingButtonOutlined>
+                    <GlowingButtonOutlined href='/create-your-quote'>Discuss your website!</GlowingButtonOutlined>
                 </Box>
             </Box>
         </Box>

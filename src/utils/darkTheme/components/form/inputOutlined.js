@@ -9,12 +9,13 @@ const { size } = typography
 const inputOutlined = {
   styleOverrides: {
     root: {
-      backgroundColor: transparent.main,
+      backgroundColor: "transparent",
       fontSize: size.sm,
       borderRadius: borderRadius.md,
 
       '&:hover .MuiOutlinedInput-notchedOutline': {
-        borderColor: inputBorderColor
+        borderColor: inputBorderColor,
+        backgroundColor: "transparent",
       },
 
       '&.Mui-focused': {
@@ -22,6 +23,7 @@ const inputOutlined = {
           borderColor: info.main
         }
       }
+      
     },
 
     notchedOutline: {

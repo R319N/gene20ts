@@ -19,10 +19,16 @@ export const styles = {
     borderRadius: "10px",
     border: "1px solid #dec5e355 ",
   },
+  container: {
+    width: "100%",
+    height: "100%",
+    overflow: "hidden",
+    paddingTop: "5rem",
+  },
   cardStyle: {
     borderRadius: "8px", // Add border radius for rounded corners
     backdropFilter: "blur(8px)",
-    backgroundImage: `linear-gradient(45deg, #449DD110 0%, #9A48D010 100%)`, // Adjust transparency as needed
+    background: (theme) => theme.palette.background.card, // Adjust transparency as needed
   },
   center_flex: {
     display: "flex",
@@ -110,11 +116,11 @@ export const styles = {
       transform: "scale(2)",
     },
   },
-  slidingText:{
+  slidingText: {
     fontSize: {
       xs: pxToRem(48),
-      sm: pxToRem(64), 
-      md: pxToRem(68), 
+      sm: pxToRem(64),
+      md: pxToRem(68),
       lg: pxToRem(76),
     },
     whiteSpace: "nowrap",
@@ -126,7 +132,49 @@ export const styles = {
       boxShadow: (theme) => `0 0 10px ${theme.palette.primary.main}`,
       border: (theme) => `1px solid ${theme.palette.primary.main} `,
       color: (theme) => theme.palette.text.primary,
+      borderRadius: "8px",
       opacity: "0.8",
+    },
+  },
+
+  tablehead: {
+    backgroundColor: "#333",
+  },
+  tablerow: {
+    "&:nth-of-type(odd)": {
+      backgroundColor: "#333",
+    },
+  },
+  glowingText: {
+    "&:hover": {
+      textTransform: "capitalize",
+      display: "flex",
+      fontweight: "bold",
+      color: "textPrimary",
+      textShadow:
+        "0 0 10px #00f, 0 0 20px #00f, 0 0 30px #00f, 0 0 40px #00f, 0 0 50px #00f, 0 0 60px #00f, 0 0 70px #00f",
+      animation: "$glow 1s ease-in-out infinite alternate",
+
+      color: "black",
+    },
+  },
+  scaleHover: {
+    "&:hover": {
+      transform: "scale(1.2)",
+      transition: "transform 0.3s ease, box-shadow 0.3s ease",
+    },
+  },
+  glow: {
+    "&:hover": {
+      position: "absolute",
+      // top: "-4px",
+      // left: "-4px",
+      // height: "68px",
+      // width: "68px",
+      // borderRadius: "50%",
+      background:
+        "radial-gradient(circle, rgba(255,255,255,0) 50%, rgba(255,255,255,0.3) 100%)",
+      zIndex: 0,
     },
   },
 };

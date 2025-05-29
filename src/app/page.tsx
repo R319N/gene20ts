@@ -1,26 +1,48 @@
 "use client"
+import React, { useEffect } from "react";
+
+//layouts
 import RootLayout from "./layout";
+import ServerLayout from "./serverLayout";
+
+//mui imports
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 
+//components
+import Loading from "@/examples/loading";
 import Appbar from '@/components/navigation/Appbar'
-import Presentation from "@/components/Presentation/Presentation";
+
+// sections
+import HeroSection from "@/sections/HeroSection";
 import OurServices from "@/sections/ourServices";
-import PrizingModel from "@/sections/prizingModel";
 import OurWork from "@/sections/ourWork";
-import Testimonials from "@/sections/testimonials";
 import ContactUs from "@/sections/contact_us";
 import TechStack from "@/sections/techStack";
-import ParticlesComponent from "@/components/particles";
-import Footer from "@/sections/Footer";
-import SubscribeToUs from "@/sections/SubscribeToUs";
-import Typography from '@mui/material/Typography';
-import ServerLayout from "./serverLayout";
-import WhatsAppButton from "@/components/contact/whatsAppButton";
-import IconButton from '@mui/material/IconButton';
-import ContactButton from "@/components/contact/ContactButton";
-import zIndex from "@mui/material/styles/zIndex";
+import FooterSection from "@/sections/Footer";
+
+
 export default function Home() {
+
+  const [loading, setLoading] = React.useState(true);
+
+  useEffect(() => {
+    const loadData = async () => {
+      // Add your asynchronous data loading logic here
+      // For example, fetch data from an API or perform initial setup
+
+      // Simulate a delay (replace this with your actual data loading logic)
+      await new Promise((resolve) => setTimeout(resolve, 4000));
+
+      // Set loading to false once data is loaded
+      setLoading(false);
+    };
+
+    loadData();
+  }, []);
+
+
+
   return (
     <ServerLayout>
       <RootLayout>
@@ -32,56 +54,37 @@ export default function Home() {
             overflow: "hidden",
             borderRadius: "0",
             margin: 0,
+            bgcolor: "black",
+            backgroundImage: `linear-gradient( to bottom left,rgba(89, 0, 255, 0.17),rgba(66, 0, 153, 0.24))`,
           }}
         >
-          <Appbar />
-          <Box>
-            <Box sx-={{ position: "fixed", bottom: "4rem", right: "2rem", zIndex: 99 }}>
-              <ContactButton />
+          {loading ? (
+            // Display the loading spinner while data is being loaded
+            <Loading />
+          ) : (
+            <Box>
+              <Appbar />
+              <HeroSection />
+              <Box sx={{ position: "relative" }}>
+                <OurServices />
+                <OurWork />
+                <div className="gradient-01" />
+              </Box>
+              <Box sx={{
+                position: "relative",
+              }}>
+                <ContactUs />
+                <TechStack />
+                <div className="gradient-03" />
+              </Box>
+              <Box sx={{
+                position: "relative",
+              }}>
+                <div className="footer-gradients" />
+                <FooterSection />
+              </Box>
             </Box>
-          </Box>
-
-          <Presentation />
-          <Box sx={{ position: "relative", overflow: "hidden" }}>
-            <ParticlesComponent />
-          </Box>
-
-          <Box
-            sx={{
-              px: { xs: "0", lg: "16%" },
-              m: 0,
-              width: "100%",
-              my: "2rem",
-            }}
-          >
-            <Box sx={{ position: "relative" }}>
-
-              <div className="gradient-03" />
-              <OurServices />
-              <PrizingModel />
-            </Box>
-            <Box sx={{ position: "relative" }}>
-              <OurWork />
-              <Testimonials />
-              <div className="gradient-01" />
-            </Box>
-            <Box sx={{ position: "relative" }}>
-              <ContactUs />
-              <TechStack />
-
-              <div className="gradient-04" />
-            </Box>
-          </Box>
-          <Box sx={{
-            position: "relative", background: "#1E212Bcc",
-            backdropFilter: "blur(10px)",
-          }}>
-            <div className="feedback-gradient" />
-            <SubscribeToUs />
-
-            <Footer />
-          </Box>
-
+          )}
         </Paper>
       </RootLayout>
     </ServerLayout>

@@ -60,7 +60,6 @@ const typography = {
     lineHeight: 1.3,
     fontWeight: baseProperties.fontWeightBold,
     ...baseHeadingProperties,
-    color: transparent.main,
   },
 
   h3: {
@@ -86,7 +85,6 @@ const typography = {
     fontSize: pxToRem(18),
     lineHeight: 1.625,
     ...baseHeadingProperties,
-    color: transparent.main,
   },
 
   subtitle1: {

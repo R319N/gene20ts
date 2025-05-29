@@ -2,7 +2,7 @@ import zIndex from "@mui/material/styles/zIndex";
 import colors from "../../base/colors";
 import typography from "../../base/typography";
 
-const { transparent, primary, inputBorderColor, grey } = colors;
+const { inputBorderColor, grey, secondary } = colors;
 const { size } = typography;
 
 const inputBase = {
@@ -16,10 +16,10 @@ const inputBase = {
       "&:hover": {},
 
       "& .MuiOutlinedInput-notchedOutline, &:before": {
-        borderColor: primary.main,
+        borderColor: secondary.main,
         color: grey.light,
+        backgroundColor: "transparent",
       },
-     
 
       "& .MuiOutlinedInput-notchedOutline": {
         borderColor: inputBorderColor,

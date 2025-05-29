@@ -1,7 +1,7 @@
 import colors from '../../base/colors'
 import typography from '../../base/typography'
 
-const { secondary, text, grey } = colors
+const { primary, text } = colors
 const { fontWeightLighter } = typography
 
 const formLabel = {

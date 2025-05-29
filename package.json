@@ -1,5 +1,5 @@
 {
-  "name": "gene20ts",
+  "name": "wilfred-reign-ts",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -10,15 +10,20 @@
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
+    "@hookform/resolvers": "^5.0.1",
     "@tsparticles/engine": "^3.7.1",
     "@tsparticles/react": "^3.0.0",
+    "formik": "^2.4.6",
     "next": "14.1.2",
+    "node": "^22.15.0",
     "react": "^18",
     "react-dom": "^18",
+    "react-hook-form": "^7.56.1",
     "react-slick": "^0.30.3",
     "react-tsparticles": "^2.12.2",
     "tsparticles": "^3.7.1",
-    "tsparticles-engine": "^2.12.0"
+    "tsparticles-engine": "^2.12.0",
+    "yup": "^1.6.1"
   },
   "devDependencies": {
     "@emotion/cache": "^11.13.1",

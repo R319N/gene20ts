@@ -1,26 +1,30 @@
 import React from 'react'
 import { motion } from "framer-motion";
-import { staggerContainer } from '@/utils/motion'
-import FooterComponent from '@/components/footer/FooterComponent';
-const Footer = () => {
+import { footerVariants, staggerContainer } from '@/utils/motion'
+import Footer from '@/components/footer/Footer';
+const FooterSection = () => {
     return (
-        <section
+        // <footer
+        //     style={{
+        //         position: 'relative',
+        //     }}
+        //     id="contact"
+        // >
+        <motion.footer
             style={{
                 position: 'relative',
             }}
             id="contact"
+            variants={footerVariants}
+            initial='hidden'
+            whileInView='show'
+            viewport={{ once: false, amount: 0.25 }}
         >
-            <motion.footer
-                variants={staggerContainer}
-                initial='hidden'
-                whileInView='show'
-                viewport={{ once: false, amount: 0.25 }}
-            >
-                <div className="footer-gradient" />
-                <FooterComponent />
-            </motion.footer>
-        </section>
+            <div className="footer-gradient" />
+            <Footer />
+        </motion.footer>
+        // </footer>
     )
 }
 
-export default Footer
+export default FooterSection

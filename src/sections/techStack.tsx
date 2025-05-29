@@ -3,10 +3,11 @@ import React from "react";
 import { motion } from "framer-motion";
 import { staggerContainer } from "@/utils/motion";
 import TechStackComponent from "@/components/techStack/TechStackComponent";
+import ParticlesComponent from "@/components/particles";
 
 const TechStack = () => {
   return (
-    <section style={{ position: "relative", zIndex: 10 }}>
+    <section>
       <motion.div
         variants={staggerContainer}
         initial="hidden"
@@ -14,8 +15,8 @@ const TechStack = () => {
         viewport={{ once: false, amount: 0.25 }}
         style={{ margin: "auto", flexDirection: "column" }}
       >
+
         <TechStackComponent />
-      
       </motion.div>
     </section>
   );

@@ -23,7 +23,7 @@ export default function ServerLayout({
   return (
     <html>
       <head>
-        <title>Gene 20 - Crafting Exceptional Digital Experiences</title>
+        <title>Crafting Exceptional Digital Experiences with Wilfred Reign</title>
         <style jsx global>{`
           @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
         `}</style>
